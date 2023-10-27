@@ -1,0 +1,68 @@
+Assignment: - 
+1. A developer is assigned a task to scrape 1 lakh website pages from a directory site, while scrapping he is facing such hcaptcha, which are placed to stop people from scrapping As a project Coordinator suggest ways to solve this problem
+---> If it's allowed, try reaching out to the website owners to see if they can give you the data you need through official  otherwise If possible, think about buying the data directly from the website. Some websites sell their data.
+Figure out how you'll organize and store the data you collect and make it work for your company, If you need to collect data from the website, work with your tech team to pick the best tools to do it without causing problems Show why it's essential to collect this data and how it can help your business. This can be helpfull while talking to the website owners.
+
+ 2. Our client has around 10k linkedin people profiles, he wants to know the estimated income range of these profiles. Suggest ways on how to do this?
+—>  Look at the job titles and industries listed in the profiles. Different roles and industries often have typical income ranges. You can refer to industry reports or salary surveys to make rough estimates.
+Income can vary greatly by location due to differences in the cost of living. Consider the locations mentioned in the profiles to gauge regional income levels.
+If you have access to historical income data for similar LinkedIn profiles, you could develop a machine learning model to predict income ranges based on the available data. However, this requires a substantial dataset. If feasible, you can contact a sample of these LinkedIn profiles and directly ask about their income ranges. Keep in mind that not everyone may be willing to share this information.
+Some third-party data services claim to provide estimated income ranges for LinkedIn profiles
+
+If we have data table so we find data through the SQL commands
+SELECT
+    job_title,
+    AVG(income) AS average_income
+FROM
+    linkedin_profiles
+GROUP BY
+    job_title;
+
+ Calculate the average income by industry
+SELECT
+    industry,
+    AVG(income) AS average_income
+FROM
+    linkedin_profiles
+GROUP BY
+    industry;
+
+Calculate the average income by location
+SELECT
+    location,
+    AVG(income) AS average_income
+FROM
+    linkedin_profiles
+GROUP BY
+    location;
+
+ 3. We have a list of 1L company names, need to find linkedin company links of these profiles, how to go about this?
+—> Check if LinkedIn provides an API that allows you to search for company profiles using company names. LinkedIn sometimes restricts access to their API, and it may require an application and approval
+Web scraping is an option, but it should be done with care and with LinkedIn's terms of use. You can write a web scraping script to search for company names and extract LinkedIn profile URLs
+LinkedIn has a company directory (www.linkedin.com/directory/companies) where you can search for companies. You can try automating searches on this directory, but be mindful of any rate-limiting or access restrictions.
+There is also some website and entension is there through that we got linkdin profile for example
+https://app.apollo.io/ Apollo website here you got company size with their employee details like mail id, linkdin profile , deginations etc .
+
+
+
+ 4. How to identify list of companies whose tech stack is built on Python. Give names of 5 companies if possible, by your suggested approach
+—> Look for job listings from companies that mention Python as a required or preferred skill. Job boards, company websites, and professional networking sites like LinkedIn can be good sources for this information
+Search on GitHub for companies or organizations that have Python repositories. Many companies host their open-source projects on GitHub, which can give you an idea of their tech stack
+Search for LinkedIn profiles of employees from various companies. Sometimes, they mention the technologies they work with in their profiles, Explore company blogs and technical articles to see if they discuss the technologies they use, including Python 
+Join professional networks and forums related to Python development, such as PyCon events or Python-specific online communities. You might find discussions or information about companies using Python there
+1.Google
+Google uses Python for a variety of tasks, including data science, machine learning, and web development.
+2. Netflix
+Netflix uses Python for its streaming service, as well as for data science and machine learning.
+3. Spotify
+Spotify uses Python for data analysis and backend development.
+4. Dropbox
+Dropbox uses Python for application development, infrastructure, and operations.
+5. Instagram
+Instagram uses Python for its web framework, as well as for data science and machine learning.
+
+5. Need to find an API, through which we can send linkedin messages to other linkedin users
+—> Sending a direct message to a person using the LinkedIn API requires obtaining the appropriate API permissions and making an API request to the LinkedIn API endpoint. The LinkedIn API provides the messages endpoint for sending messages
+Here is an example of how you can send a direct message to a person using the LinkedIn API with the messages endpoint:
+Obtain API permissions: To use the LinkedIn API, you'll need to obtain the appropriate API permissions. This can be done by creating a LinkedIn Developer Account and registering your application.Authenticate the API request: To authenticate the API request, you'll need to use an access token. The access token can be obtained by following the authentication process outlined in the LinkedIn API documentation.
+Send the API request: Once you have obtained the access token, you can send a POST request to the messages endpoint with the recipient's LinkedIn ID and the message text in the request bod
